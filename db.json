@@ -1,0 +1,19 @@
+{
+  "bovinos": [],
+  "alimentos": [],
+  "historial_alimentacion": [],
+  "suplementos": [],
+  "historial_suplementos": [],
+
+
+  "enfermedades": [],
+  "historial_enfermedades": [],
+  "alergias": [],
+  "historial_alergias": [],
+  "tratamientos": [],
+  "historial_tratamientos": [],
+  "vacunas": [],
+  "historial_vacunas": [],
+  "lactancias": [],
+  "historial_lactancias": []
+}
