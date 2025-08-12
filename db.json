@@ -1,12 +1,23 @@
 {
-  "bovinos": [],
-  
+  "bovinos": [
+    {
+      "id": "8fbe",
+      "nombre": "",
+      "raza": "",
+      "fecha_nacimiento": "",
+      "estado": "",
+      "sexo": "",
+      "id_madre": "",
+      "id_padre": "",
+      "fecha_registro": "",
+      "foto_bovino": "",
+      "cloud_id": ""
+    }
+  ],
   "alimentos": [],
   "historial_alimentacion": [],
   "suplementos": [],
   "historial_suplementos": [],
-
-
   "enfermedades": [],
   "historial_enfermedades": [],
   "alergias": [],

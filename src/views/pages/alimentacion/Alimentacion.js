@@ -107,7 +107,7 @@ const Alimentacion=()=>{
                         </CTableHead>
                         <CTableBody>
                             {histAlimentos.filter(h => h.id_bovino === selectCowId).map(h => (
-                                <CTableRow key={h.id_historial_alimentacion}>
+                                <CTableRow key={h.id}>
                                     <CTableDataCell>
                                         {cows.find(c => c.id === h.id_bovino)?.nombre || 'N/A'}
                                     </CTableDataCell>
@@ -142,7 +142,9 @@ const Alimentacion=()=>{
                             </CTableRow>
                         </CTableHead>
                         <CTableBody>
-
+                            {!histSuplementos && (
+                                <p>No Se Encontraron Datos Del Bovino...</p>
+                            )}
                         </CTableBody>
                     </CTable>
                 </CCardBody>

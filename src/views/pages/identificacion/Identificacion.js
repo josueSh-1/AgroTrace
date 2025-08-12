@@ -93,8 +93,10 @@ const Identificacion=()=>{
                 cloud_id:''
             })
             setSucces('Nuevo Bovino Agregado...')
+            setCreateModal(false)
         }catch{
             setError('Erro Al Agregar Un Nuevo Bovino...')
+            setCreateModal(false)
         }
     }
 
