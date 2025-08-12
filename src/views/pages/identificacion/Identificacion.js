@@ -1,7 +1,7 @@
 import { cilSearch } from "@coreui/icons";
 import CIcon from "@coreui/icons-react";
 import { CAlert, CButton, CCard, CCardBody, CCardFooter, CCardHeader, CCardImage, CCol, CForm, CFormInput, CFormSelect, CImage, CInputGroupText, CModal, CModalBody, CModalFooter, CModalHeader, CRow } from "@coreui/react";
-import React, { use, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import QRCode from 'react-qr-code'
 
@@ -122,6 +122,8 @@ const Identificacion=()=>{
     const handleUpdateAction=async(id)=>{
         try{
             await axios.put(`http://localhost:5000/bovinos/${id}`,selectCow)
+            const response = await axios.get('http://localhost:5000/bovinos')
+            setCows(response.data)
             setUpdateModal(false)
             setSucces('Bovino Actualizado Correctamente...')
             setSelectCow({})
@@ -180,9 +182,9 @@ const Identificacion=()=>{
                 <CCardBody>
                     {error && <CAlert color="danger">{error}</CAlert>}
                     {succes && <CAlert color="primary">{succes}</CAlert>}
-                    <CRow xs={{ cols: 1 }} md={{ cols: 3 }} className="g-5" style={{cursor:'pointer'}}>
+                    <CRow xs={{ cols: 1 }} md={{ cols: 3 }} className="g-5">
                         <CCol xs>
-                            <CCard onClick={()=>setCreateModal(true)}>
+                            <CCard onClick={()=>setCreateModal(true)} style={{cursor:'pointer'}}>
                                 <CCardHeader><h4>Agregar Un Bovino</h4></CCardHeader>
                                 <CCardBody>
                                     <h1>+</h1>
@@ -193,7 +195,7 @@ const Identificacion=()=>{
                         </CCol>
                         {searching.map((cow)=>
                             <CCol xs key={cow.id}>
-                                <CCard onClick={()=>handleShowInfo(cow)}>
+                                <CCard onClick={()=>handleShowInfo(cow)} style={{cursor:'pointer'}}>
                                     <CCardHeader>
                                         <h4>{cow.nombre}</h4>
                                     </CCardHeader>
@@ -347,7 +349,7 @@ const Identificacion=()=>{
                         )}
                     </CCardBody>
                     <CCardFooter>
-                        <CButton onClick={handleDeleteAction(selectCow.id)}>Eliminar</CButton>
+                        <CButton onClick={()=>handleDeleteAction(selectCow.id)}>Eliminar</CButton>
                     </CCardFooter>
                 </CCard>
             </CModal>
@@ -393,7 +395,7 @@ const Identificacion=()=>{
                                 <div className="mt-3">
                                     <h6 className="fw-bold">Fecha de Registro:</h6>
                                     <p className="text-muted">
-                                        {selectCow.fecha_registro}
+                                        {formatDate(selectCow.fecha_registro)}
                                     </p>
                                 </div>
                             </div>
@@ -409,7 +411,7 @@ const Identificacion=()=>{
                 <CModalFooter>
                     <CButton onClick={()=>setUpdateModal(true)}>Editar</CButton>
                     <CButton onClick={()=>setDeleteModal(true)}>Eliminar</CButton>
-                    <CButton onClick={handleQRDownload(qr)}>Descargar QR</CButton>
+                    <CButton onClick={()=>handleQRDownload(qr)}>Descargar QR</CButton>
                 </CModalFooter>
             </CModal>
         </div>
