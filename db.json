@@ -1,23 +1,146 @@
 {
   "bovinos": [
     {
-      "id": "8fbe",
-      "nombre": "",
-      "raza": "",
-      "fecha_nacimiento": "",
-      "estado": "",
-      "sexo": "",
+      "id": "4cb4",
+      "nombre": "Perla",
+      "raza": "Brahman",
+      "fecha_nacimiento": "2022-06-12",
+      "estado": "Activo",
+      "sexo": "Hembra",
       "id_madre": "",
       "id_padre": "",
-      "fecha_registro": "",
-      "foto_bovino": "",
-      "cloud_id": ""
+      "fecha_registro": "2025-08-12",
+      "foto_bovino": "https://res.cloudinary.com/dqswxffsv/image/upload/v1755045781/men6enbfs5d4ofr8o6eg.jpg",
+      "cloud_id": "men6enbfs5d4ofr8o6eg"
+    },
+    {
+      "id": "0c54",
+      "nombre": "Simon",
+      "raza": "Carora",
+      "fecha_nacimiento": "2024-02-12",
+      "estado": "Activo",
+      "sexo": "Macho",
+      "id_madre": "",
+      "id_padre": "",
+      "fecha_registro": "2025-08-12",
+      "foto_bovino": "https://res.cloudinary.com/dqswxffsv/image/upload/v1755045907/qd0yfo8lblnlc8ydtgnp.jpg",
+      "cloud_id": "qd0yfo8lblnlc8ydtgnp"
+    },
+    {
+      "id": "f303",
+      "nombre": "Toñita",
+      "raza": "Limonero",
+      "fecha_nacimiento": "2024-11-12",
+      "estado": "Activo",
+      "sexo": "Hembra",
+      "id_madre": "4cb4",
+      "id_padre": "0c54",
+      "fecha_registro": "2025-08-12",
+      "foto_bovino": "https://res.cloudinary.com/dqswxffsv/image/upload/v1755046209/pv2jeuhj0flobifzhfan.png",
+      "cloud_id": "pv2jeuhj0flobifzhfan"
     }
   ],
-  "alimentos": [],
-  "historial_alimentacion": [],
-  "suplementos": [],
-  "historial_suplementos": [],
+  "alimentos": [
+    {
+      "id": "a5ba",
+      "nombre": "Heno",
+      "descripcion": "Pasto o forraje seco, ideal para la temporada seca o no hay pasto fresco",
+      "tipo": "Forraje",
+      "unidad": "Kilogramos"
+    },
+    {
+      "id": "2de8",
+      "nombre": "Grano de cereales",
+      "descripcion": "Maiz, avena, cebada, trigo",
+      "tipo": "Concentrado",
+      "unidad": "Kilogramos"
+    },
+    {
+      "id": "083a",
+      "nombre": "Tuberculos y Raices",
+      "descripcion": "Papas,nabos, etc",
+      "tipo": "Concentrado",
+      "unidad": "Kilogramos"
+    }
+  ],
+  "historial_alimentacion": [
+    {
+      "id": "f2d8",
+      "id_bovino": "0c54",
+      "id_alimento": "a5ba",
+      "fecha": "2025-08-13",
+      "etapa": "Engorde",
+      "cantidad": "16",
+      "notas": ""
+    },
+    {
+      "id": "5570",
+      "id_bovino": "4cb4",
+      "id_alimento": "2de8",
+      "fecha": "2025-08-05",
+      "etapa": "Producción",
+      "cantidad": "20",
+      "notas": "Son sus favoritos"
+    },
+    {
+      "id": "9ea6",
+      "id_bovino": "4cb4",
+      "id_alimento": "083a",
+      "fecha": "2025-08-14",
+      "etapa": "Producción",
+      "cantidad": "35",
+      "notas": "Falta de consumo"
+    }
+  ],
+  "suplementos": [
+    {
+      "id": "f085",
+      "nombre": "Calcio y Fosforo",
+      "descripcion": "Salud osea y produccion de leche",
+      "tipo": "Mineral",
+      "unidad": "Gramos"
+    },
+    {
+      "id": "ae56",
+      "nombre": "Vitamina A",
+      "descripcion": "Esencial para la vision, el crecimiento y el sistema inmunologico",
+      "tipo": "Vitamínico",
+      "unidad": "Mililitros"
+    },
+    {
+      "id": "45f8",
+      "nombre": "Bloques de meleza",
+      "descripcion": "Proporcionan energia",
+      "tipo": "Energético",
+      "unidad": "Gramos"
+    }
+  ],
+  "historial_suplementos": [
+    {
+      "id": "c389",
+      "id_bovino": "0c54",
+      "id_suplemento": "ae56",
+      "fecha": "2025-08-13",
+      "dosis": "355",
+      "notas": "Presenta una buena respuesta"
+    },
+    {
+      "id": "5cd0",
+      "id_bovino": "0c54",
+      "id_suplemento": "45f8",
+      "fecha": "2025-08-05",
+      "dosis": "5",
+      "notas": "Se consumio completamente "
+    },
+    {
+      "id": "dbb7",
+      "id_bovino": "4cb4",
+      "id_suplemento": "f085",
+      "fecha": "2025-08-09",
+      "dosis": "12",
+      "notas": ""
+    }
+  ],
   "enfermedades": [],
   "historial_enfermedades": [],
   "alergias": [],

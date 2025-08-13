@@ -40,6 +40,7 @@ const Identificacion=()=>{
     const [succes,setSucces]=useState('')
     const CLOUD_NAME = 'dqswxffsv'
     const UPLOAD_PRESET = 'bovinoPicture_unsign'
+    const api=''
 
     useEffect(()=>{
         async function fetchData() {
@@ -66,11 +67,13 @@ const Identificacion=()=>{
             newData.append('upload_preset',UPLOAD_PRESET)
             const response = await axios.post(`https://api.cloudinary.com/v1_1/${CLOUD_NAME}/image/upload`,newData)
             const {secure_url, public_id}=response.data
-            setNewCow({...newCow, foto_bovino: secure_url, cloud_id: public_id})
-        }catch{
+            setNewCow((prev) => ({...prev, foto_bovino: secure_url, cloud_id: public_id}))
+        }catch(error){
+            console.log(error)
             setError('Error Cargando La Imagen')
         }
     }
+
 
     const handleCreateCow=async(e)=>{
         e.preventDefault()
@@ -112,12 +115,14 @@ const Identificacion=()=>{
             await axios.delete(`http://localhost:5000/bovinos/${id}`)
             setCows(prev=>prev.filter(cow=>cow.id!==id))
             setDeleteModal(false)
+            setChowModal(false)
             setSelectCow({})
             setQr(null)
             setSucces('Eliminacion Completada...')
         }catch{
             setError('Error Eliminando Al Bovino...')
             setDeleteModal(false)
+            setChowModal(false)
         }
     }
 
@@ -127,9 +132,11 @@ const Identificacion=()=>{
             const response = await axios.get('http://localhost:5000/bovinos')
             setCows(response.data)
             setUpdateModal(false)
+            setChowModal(false)
             setSucces('Bovino Actualizado Correctamente...')
             setSelectCow({})
         }catch{
+            setChowModal(false)
             setError('Error Actualizando El Bovino...')
             setUpdateModal(false)
         }
@@ -184,11 +191,11 @@ const Identificacion=()=>{
                 <CCardBody>
                     {error && <CAlert color="danger">{error}</CAlert>}
                     {succes && <CAlert color="primary">{succes}</CAlert>}
-                    <CRow xs={{ cols: 1 }} md={{ cols: 3 }} className="g-5">
+                    <CRow xs={{ cols: 1 }} md={{ cols: 3 }} className="g-5 justify-contetn">
                         <CCol xs>
-                            <CCard onClick={()=>setCreateModal(true)} style={{cursor:'pointer'}}>
-                                <CCardHeader><h4>Agregar Un Bovino</h4></CCardHeader>
-                                <CCardBody>
+                            <CCard onClick={()=>setCreateModal(true)}   className="h-100 w-100" style={{cursor:'pointer'}}>
+                                <CCardHeader className="d-flex align-items-center justify-content-center"><h4>Agregar Un Bovino</h4></CCardHeader>
+                                <CCardBody className="d-flex align-items-center justify-content-center">
                                     <h1>+</h1>
                                 </CCardBody>
                                 <CCardFooter>
@@ -198,13 +205,13 @@ const Identificacion=()=>{
                         {searching.map((cow)=>
                             <CCol xs key={cow.id}>
                                 <CCard onClick={()=>handleShowInfo(cow)} style={{cursor:'pointer'}}>
-                                    <CCardHeader>
+                                    <CCardHeader className="d-flex align-items-center justify-content-center">
                                         <h4>{cow.nombre}</h4>
                                     </CCardHeader>
                                     <CCardBody>
                                         <CCardImage src={cow.foto_bovino} style={{ height: '200px', objectFit: 'cover' }}/>
                                     </CCardBody>
-                                    <CCardFooter>
+                                    <CCardFooter className="d-flex align-items-center justify-content-center">
                                         <small className="text-body-secondary">Fecha de Registro: {formatDate(cow.fecha_registro)}</small>
                                     </CCardFooter>
                                 </CCard>
@@ -406,7 +413,7 @@ const Identificacion=()=>{
                     {qr && (
                         <div id="qr_Download" style={{ textAlign: 'center', marginTop: 20 }}>
                             <h5>QR del Bovino ID: {qr}</h5>
-                            <QRCode value={`http://localhost:5000/bovino/${qr}`} size={200} />
+                            <QRCode value={`http://${api}:3000/#/qrshow/${qr}`} size={200} />
                         </div>
                     )}
                 </CModalBody>
