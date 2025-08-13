@@ -130,7 +130,9 @@
       "id_suplemento": "45f8",
       "fecha": "2025-08-05",
       "dosis": "5",
+
       "notas": "Se consumio completamente"
+
     },
     {
       "id": "dbb7",
@@ -141,6 +143,7 @@
       "notas": ""
     }
   ],
+
   "enfermedades": [
     {
       "id": "0099",
@@ -159,6 +162,7 @@
       "estado": "activa"
     }
   ],
+
   "historial_enfermedades": [],
   "alergias": [],
   "historial_alergias": [],
