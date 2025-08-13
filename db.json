@@ -130,7 +130,7 @@
       "id_suplemento": "45f8",
       "fecha": "2025-08-05",
       "dosis": "5",
-      "notas": "Se consumio completamente "
+      "notas": "Se consumio completamente"
     },
     {
       "id": "dbb7",
@@ -157,6 +157,94 @@
       "gravedad": "baja",
       "fechaDiagnostico": "2025-08-14",
       "estado": "activa"
+    }
+  ],
+  "historial_enfermedades": [],
+  "alergias": [],
+  "historial_alergias": [],
+  "tratamientos": [
+    {
+      "id": "1922",
+      "medicamento": "nimodipina",
+      "dosis": "1cc",
+      "frecuencia": "dos diaarias",
+      "duracion": "2 dias",
+      "fechaInicio": "2025-08-12",
+      "estado": "activo"
+    }
+  ],
+  "historial_tratamientos": [],
+  "vacunas": [
+    {
+      "id": "366a",
+      "nombre": "Fiebre",
+      "tipo": "preventiva",
+      "dosis": "1cc",
+      "fechaAplicacion": "2025-08-12",
+      "proximaDosis": "2025-08-20",
+      "estado": "vencida"
+    }
+  ],
+  "historial_vacunas": [],
+  "lactancias": [
+    {
+      "id": 1,
+      "bovinoId": 1,
+      "fechaInicio": "2024-01-01",
+      "fechaFin": null,
+      "produccionDiaria": 25.5,
+      "cantidad": 765,
+      "calidad": "excelente",
+      "estado": "activa"
+    },
+    {
+      "id": 2,
+      "bovinoId": 2,
+      "fechaInicio": "2024-01-15",
+      "fechaFin": "2024-03-15",
+      "produccionDiaria": 22.3,
+      "cantidad": 1338,
+      "calidad": "buena",
+      "estado": "completada"
+    },
+    {
+      "id": 3,
+      "bovinoId": 3,
+      "fechaInicio": "2024-02-01",
+      "fechaFin": null,
+      "produccionDiaria": 18.7,
+      "cantidad": 561,
+      "calidad": "regular",
+      "estado": "activa"
+    }
+  ],
+  "historial_lactancias": [
+    {
+      "id": 1,
+      "bovinoId": 1,
+      "fecha": "2024-01-15",
+      "cantidad": 25.5,
+      "grasa": 3.8,
+      "proteina": 3.2,
+      "estado": "registrado"
+    },
+    {
+      "id": 2,
+      "bovinoId": 1,
+      "fecha": "2024-01-16",
+      "cantidad": 26.2,
+      "grasa": 3.9,
+      "proteina": 3.1,
+      "estado": "registrado"
+    },
+    {
+      "id": 3,
+      "bovinoId": 2,
+      "fecha": "2024-01-20",
+      "cantidad": 22.3,
+      "grasa": 3.5,
+      "proteina": 3,
+      "estado": "registrado"
     }
   ]
 }
