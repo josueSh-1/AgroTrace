@@ -12,6 +12,14 @@
       "gravedad": "baja",
       "fechaDiagnostico": "2025-08-12",
       "estado": "activa"
+    },
+    {
+      "id": "ee91",
+      "nombre": "garrapata",
+      "sintomas": "fiebre, no camina",
+      "gravedad": "baja",
+      "fechaDiagnostico": "2025-08-14",
+      "estado": "activa"
     }
   ],
   "historial_enfermedades": [],
